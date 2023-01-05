@@ -798,7 +798,7 @@ class BaseAlgorithm(ABC):
         )
         
        
-        del data["feedback_file"]
+        # del data["feedback_file"]
         # load parameters
         # pdb.set_trace()
         model.__dict__.update(data)
