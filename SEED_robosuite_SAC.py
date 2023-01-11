@@ -125,27 +125,44 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    # env = suite.make(
+    #     env_name="Reaching2D",
+    #     robots="Panda",
+    #     controller_configs=load_controller_config(default_controller="OSC_POSE"),
+    #     gripper_types="default",
+    #     initialization_noise=None,
+    #     table_full_size=(0.65, 0.8, 0.15),
+    #     table_friction=(100, 100, 100),
+    #     use_camera_obs=False,
+    #     use_object_obs=True,
+    #     reward_scale=1.0,
+    #     has_renderer=True,
+    #     has_offscreen_renderer=False,
+    #     render_camera="frontview",
+    #     ignore_done=False,
+    #     hard_reset=True,
+    #     camera_names="frontview",
+    #     target_half_size=(0.05, 0.05, 0.001), # target width, height, thickness
+    #     target_position=(0.0, 0.0), # target position (height above the table)
+    #     random_init=True,
+    #     random_target=False,
+    # )
+
     env = suite.make(
-        env_name="Reaching2D",
+        env_name="POCReaching",
         robots="Panda",
         controller_configs=load_controller_config(default_controller="OSC_POSE"),
-        gripper_types="default",
         initialization_noise=None,
         table_full_size=(0.65, 0.8, 0.15),
         table_friction=(100, 100, 100),
         use_camera_obs=False,
         use_object_obs=True,
-        reward_scale=1.0,
         has_renderer=True,
         has_offscreen_renderer=False,
         render_camera="frontview",
         ignore_done=False,
-        hard_reset=True,
         camera_names="frontview",
-        target_half_size=(0.05, 0.05, 0.001), # target width, height, thickness
-        target_position=(0.0, 0.0), # target position (height above the table)
-        random_init=True,
-        random_target=False,
+        random_init=False,
     )
 
     main(args, env)
