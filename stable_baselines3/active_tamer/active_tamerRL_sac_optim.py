@@ -1,3 +1,8 @@
+"""
+Active TAMER with Oracle feedback. Final version used for simulated robosuite experiments.
+"""
+
+
 import random
 import sys
 from typing import Any, Dict, List, Optional, Tuple, Type, Union
